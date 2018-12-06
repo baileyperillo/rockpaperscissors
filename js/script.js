@@ -6,14 +6,15 @@
 /* global $ */
 var userChoice = "";
 var computerChoice = "";
-var winner = "";
-var randomNumber = Math.random();
+var winner = "Winner:";
+
 
 
 $("#shoot").click(function() {
     var input = $("#input").val();
     $("#userChoice").text(input);
     var userChoice = input;
+    var randomNumber = Math.random();
     
     if(randomNumber > .75) {
         $("#computerChoice").text("rock");
@@ -27,11 +28,10 @@ $("#shoot").click(function() {
     }
     
  if (userChoice ==="rock" && computerChoice === "paper"||userChoice ==="paper" && computerChoice==="scissors"|| userChoice ==="scissors" && computerChoice ==="rock") {
-     var winner = "computer wins!"
-     $("#result").text(winner);
+     $("#result").text(winner+" computer");
  }else if(computerChoice ==="rock" && userChoice === "paper"||computerChoice ==="paper" && userChoice==="scissors"|| computerChoice ==="scissors" && userChoice ==="rock") {
-    var winner = "user wins!";
-     $("#result").text(winner);
+    
+     $("#result").text(winner+" user!");
  }else {
      $("#result").text("not valid input");
  }
